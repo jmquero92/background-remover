@@ -20,6 +20,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: nicheData.title,
     description: nicheData.description,
+    alternates: {
+      canonical: `https://background-remover-app.es/quitar-fondo-${niche}`,
+    },
   };
 }
 
@@ -28,8 +31,27 @@ export default async function NichePage({ params }: Props) {
   const nicheData = niches[niche as keyof typeof niches];
   if (!nicheData) notFound();
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": `¿Cómo quitar el fondo a ${nicheData.h1.toLowerCase().replace('quitar fondo de ', '')} gratis?`,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": `Simplemente sube tu imagen arriba y nuestra inteligencia artificial eliminará el fondo automáticamente en segundos, sin perder calidad.`
+        }
+      }
+    ]
+  };
+
   return (
     <main className="min-h-screen bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <nav className="bg-slate-900 px-4 py-4 text-white border-b border-slate-800">
         <div className="max-w-5xl mx-auto flex justify-between items-center">
           <Link href="/" className="font-bold text-xl hover:text-blue-400 transition">

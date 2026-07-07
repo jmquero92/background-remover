@@ -3,8 +3,35 @@ import Link from 'next/link';
 import { niches } from '@/lib/niches';
 
 export default function Home() {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Es completamente gratis quitar el fondo de una imagen?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí, nuestra herramienta es 100% gratuita y no requiere registro ni suscripciones."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué formatos de imagen están soportados?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Soportamos los formatos de imagen más populares de la web, incluyendo JPG, PNG y WEBP."
+        }
+      }
+    ]
+  };
+
   return (
     <main className="min-h-screen bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <div className="bg-slate-900 text-white py-16 md:py-24 px-4 text-center">
         <h1 className="text-4xl md:text-6xl font-extrabold mb-4 tracking-tight">
           Elimina el fondo de cualquier imagen
