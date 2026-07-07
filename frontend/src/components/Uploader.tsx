@@ -50,7 +50,7 @@ export default function Uploader() {
     <div className="w-full max-w-5xl mx-auto p-4 flex flex-col md:flex-row my-8">
       {/* Bloque AdSense Izquierdo */}
       <div className="hidden md:block w-48 h-96 bg-slate-50 border border-slate-200 rounded-xl overflow-hidden">
-        <AdBanner dataAdSlot="SLOT_ID_IZQUIERDA" dataAdFormat="vertical" dataFullWidthResponsive={true} />
+        <AdBanner dataAdSlot="8029132433" dataAdFormat="vertical" dataFullWidthResponsive={true} />
       </div>
       
       <div className="flex-1 px-4 md:px-8">
@@ -137,7 +137,7 @@ export default function Uploader() {
 
       {/* Bloque AdSense Derecho */}
       <div className="hidden md:block w-48 h-96 bg-slate-50 border border-slate-200 rounded-xl overflow-hidden">
-        <AdBanner dataAdSlot="SLOT_ID_DERECHA" dataAdFormat="vertical" dataFullWidthResponsive={true} />
+        <AdBanner dataAdSlot="1641029503" dataAdFormat="vertical" dataFullWidthResponsive={true} />
       </div>
 
       {/* Modal Premium */}
