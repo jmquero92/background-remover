@@ -1,5 +1,6 @@
 'use client';
 import { useState, useCallback } from 'react';
+import AdBanner from './AdBanner';
 
 export default function Uploader() {
   const [file, setFile] = useState<File | null>(null);
@@ -47,9 +48,9 @@ export default function Uploader() {
 
   return (
     <div className="w-full max-w-5xl mx-auto p-4 flex flex-col md:flex-row my-8">
-      {/* Placeholder AdSense Izquierdo */}
-      <div className="hidden md:flex w-48 h-96 bg-slate-50 items-center justify-center border border-slate-200 rounded-xl">
-        <span className="text-slate-400 text-sm text-center px-4">Espacio para Google AdSense</span>
+      {/* Bloque AdSense Izquierdo */}
+      <div className="hidden md:block w-48 h-96 bg-slate-50 border border-slate-200 rounded-xl overflow-hidden">
+        <AdBanner dataAdSlot="SLOT_ID_IZQUIERDA" dataAdFormat="vertical" dataFullWidthResponsive={true} />
       </div>
       
       <div className="flex-1 px-4 md:px-8">
@@ -134,9 +135,9 @@ export default function Uploader() {
         )}
       </div>
 
-      {/* Placeholder AdSense Derecho */}
-      <div className="hidden md:flex w-48 h-96 bg-slate-50 items-center justify-center border border-slate-200 rounded-xl">
-        <span className="text-slate-400 text-sm text-center px-4">Espacio para Google AdSense</span>
+      {/* Bloque AdSense Derecho */}
+      <div className="hidden md:block w-48 h-96 bg-slate-50 border border-slate-200 rounded-xl overflow-hidden">
+        <AdBanner dataAdSlot="SLOT_ID_DERECHA" dataAdFormat="vertical" dataFullWidthResponsive={true} />
       </div>
 
       {/* Modal Premium */}
