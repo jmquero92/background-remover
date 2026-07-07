@@ -19,9 +19,7 @@ RUN pip install --no-cache-dir fastapi uvicorn python-multipart "rembg[cpu]"
 
 # Copiamos el código fuente de la aplicación
 COPY main.py .
+COPY run.py .
 
-# Exponemos el puerto que usará FastAPI (8000 por defecto, pero se sobrescribirá si el entorno lo pide)
-EXPOSE 8000
-
-# Comando para ejecutar la aplicación (Render inyecta PORT dinámicamente)
-CMD uvicorn main:app --host 0.0.0.0 --port ${PORT:-8000}
+# Comando para ejecutar la aplicación (Render asignará el PORT)
+CMD ["python", "run.py"]
